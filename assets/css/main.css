@@ -1,0 +1,62 @@
+:root {
+    --primaryColor: #0D9488;
+    --secondaryColor: #111827;
+    --mainFont: "Outfit", sans-serif;
+    --contentFont: "Heebo", sans-serif;
+}
+
+body {
+    font-family: var(--mainFont);
+}
+
+/* header starts */
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--primaryColor);
+    font-family: var(--contentFont);
+}
+
+.navbar-brand:hover {
+    transition: all 1s;
+}
+
+.nav-item a {
+    color: #000;
+    transition: all 0.5s;
+    font-size: 19px;
+}
+
+.nav-item:hover a {
+    color: var(--primaryColor);
+
+}
+
+.shopping-bag i {
+    font-size: 25px;
+    color: var(--primaryColor);
+    transition: all 0.5s;
+
+}
+
+.shopping-bag i:hover {
+    color: #000;
+}
+
+/* header ends */
+
+/* header responsive starts */
+
+@media screen and (max-width: 991px) {
+
+    .navbar-toggler {
+        font-size: 17px;
+    }
+
+    .shopping-bag i {
+        font-size: 33px;
+    }
+}
+
+/* header responsive ends */
