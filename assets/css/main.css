@@ -1,8 +1,14 @@
 :root {
     --primaryColor: #0D9488;
-    --secondaryColor: #111827;
+    --secondaryColor: #F0F5F2;
     --mainFont: "Outfit", sans-serif;
     --contentFont: "Heebo", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -60,3 +66,65 @@ body {
 }
 
 /* header responsive ends */
+
+/* categories section starts */
+
+.categories .btn {
+    background-color: var(--secondaryColor);
+    border-radius: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    width: 100%;
+    border: solid 2px var(--primaryColor);
+    transition: all 1s;
+}
+
+.categories .btn:hover {
+    background-color: var(--primaryColor);
+    color: #fff;
+    border: solid 2px var(--primaryColor);
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+}
+
+/* categories section ends */
+
+/* categories responsive starts */
+
+@media screen and (max-width: 576px) {
+
+    .categories .btn {
+        font-size: 12px;
+    }
+
+    .swiper-slide {
+        padding: 0 7px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .categories .btn {
+        font-size: 10px;
+    }
+
+    .swiper-slide {
+        padding: 0 7px;
+    }
+
+}
+
+/* categories responsive ends */
