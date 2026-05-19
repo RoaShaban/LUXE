@@ -5,6 +5,7 @@ const getCategories = async () => {
     return response.data;
 }
 
+let lastClicked = "";
 let category_btns = [];
 const displayCategories = async () => {
     const data = await getCategories();
@@ -28,8 +29,10 @@ const displayCategories = async () => {
 
     category_btns.map((category_btn) => {
         category_btn.onclick = async () => {
-            console.log(category_btn.innerText);
-            await displayProducts(`${category_btn.innerText}`);
+            lastClicked = category_btn.innerText;
+            console.log(lastClicked);
+            await displayProducts();
+            //await displayProducts(`${category_btn.innerText}`);
         }
     });
 
@@ -66,21 +69,48 @@ displayCategories();
 
 // products section
 
-const getProducts = async (category) => {
+const getProducts = async (category, sort_value) => {
 
     let response = "";
-    if (category === "All-Products" || category === "") {
-        response = await axios.get("https://dummyjson.com/products?limit=10");
-    } else {
-        response = await axios.get(`https://dummyjson.com/products/category/${category}`);
+
+    if (sort_value === "default") {
+        if (category === "All-Products" || category === "") {
+            response = await axios.get("https://dummyjson.com/products?limit=10");
+        } else {
+            response = await axios.get(`https://dummyjson.com/products/category/${category}`);
+        }
+    } else if (sort_value === "title-asc") {
+        if (category === "All-Products" || category === "") {
+            response = await axios.get("https://dummyjson.com/products?limit=10&sortBy=title&order=asc");
+        } else {
+            response = await axios.get(`https://dummyjson.com/products/category/${category}?limit=10&sortBy=title&order=asc`);
+        }
+    } else if (sort_value === "title-desc") {
+        if (category === "All-Products" || category === "") {
+            response = await axios.get("https://dummyjson.com/products?limit=10&sortBy=title&order=desc");
+        } else {
+            response = await axios.get(`https://dummyjson.com/products/category/${category}?limit=10&sortBy=title&order=desc`);
+        }
+    } else if (sort_value === "price-asc") {
+        if (category === "All-Products" || category === "") {
+            response = await axios.get("https://dummyjson.com/products?limit=10&sortBy=price&order=asc");
+        } else {
+            response = await axios.get(`https://dummyjson.com/products/category/${category}?limit=10&sortBy=price&order=asc`);
+        }
+    } else if (sort_value === "price-desc") {
+        if (category === "All-Products" || category === "") {
+            response = await axios.get("https://dummyjson.com/products?limit=10&sortBy=price&order=desc");
+        } else {
+            response = await axios.get(`https://dummyjson.com/products/category/${category}?limit=10&sortBy=price&order=desc`);
+        }
     }
 
     return response.data.products;
 }
 
-const displayProducts = async (category) => {
+const displayProducts = async (sort_value = "default") => {
 
-    const products = await getProducts(category)
+    const products = await getProducts(lastClicked, sort_value);
     const result = products.map((product) => {
         return `<div class="product col-6 col-sm-6 col-md-4 col-xl-3">
                     <div class="card m-auto h-100">
@@ -104,4 +134,9 @@ const displayProducts = async (category) => {
 
 }
 
-displayProducts("");
+displayProducts();
+
+sort_select = document.querySelector(".sort-options");
+sort_select.addEventListener("change", () => {
+    displayProducts(sort_select.value);
+});
