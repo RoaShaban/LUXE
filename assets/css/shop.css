@@ -1,0 +1,279 @@
+/* categories section starts */
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 55px;
+}
+
+.categories .btn {
+    background-color: var(--secondaryColor);
+    border-radius: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    width: 100%;
+    border: solid 2px var(--primaryColor);
+    transition: all 1s;
+}
+
+.categories .btn:hover {
+    background-color: var(--primaryColor);
+    color: #fff;
+    border: solid 2px var(--primaryColor);
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+}
+
+/* categories section ends */
+
+/* categories responsive starts */
+
+@media screen and (max-width: 576px) {
+
+    .categories .btn {
+        font-size: 12px;
+    }
+
+    .swiper-slide {
+        padding: 0 7px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .categories .btn {
+        font-size: 10px;
+    }
+
+    .swiper-slide {
+        padding: 0 7px;
+    }
+
+}
+
+/* categories responsive ends */
+
+/* products starts */
+
+.products img {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.products h2 {
+    font-size: 22px;
+}
+
+.products .price {
+    font-size: 20px;
+}
+
+.products .rating {
+    font-size: 18px;
+}
+
+.products .add-to-cart {
+    font-family: var(--contentFont);
+    background-color: var(--secondaryColor);
+    border: 1px solid var(--primaryColor);
+    color: #000;
+    border-radius: 15px;
+    padding: 8px 0;
+}
+
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    background-color: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+}
+
+
+/* products ends */
+
+/* products responsive starts */
+
+@media screen and (max-width: 991px) {
+    .products h2 {
+        font-size: 20px;
+    }
+
+    .products .price {
+        font-size: 18px;
+    }
+
+    .products .rating {
+        font-size: 16px;
+    }
+
+    .products .add-to-cart {
+        padding: 7px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .container,
+    .container-sm {
+        max-width: 687px;
+    }
+
+    .products h2 {
+        font-size: 23px;
+    }
+
+    .products .price {
+        font-size: 23px;
+        margin-right: 5px;
+    }
+
+    .products .rating {
+        font-size: 19px;
+    }
+
+    .products .add-to-cart {
+        padding: 7px 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .container,
+    .container-sm {
+        max-width: 560px;
+    }
+
+    h1{
+        font-size: 40px;
+        margin-bottom: 35px;
+    }
+
+    .products h2 {
+        font-size: 20px;
+    }
+
+    .products .price {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    .products .rating {
+        font-size: 18px;
+    }
+
+    .products .add-to-cart {
+        font-size: 15px;
+        padding: 6px 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    h1{
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+
+    .products h2 {
+        font-size: 18px;
+    }
+
+      .products .price {
+        font-size: 18px;
+        margin-right: 3px;
+    }
+
+    .products .rating {
+        font-size: 16px;
+    }
+
+    .products .add-to-cart {
+        font-size: 13px;
+        padding: 6px 0;
+    }
+
+}
+
+@media screen and (max-width:420px) {
+    .product{
+        width: 50% !important;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    h1{
+        margin-bottom: 35px;
+    }
+
+    .products h2 {
+        font-size: 18px;
+    }
+
+    .products .price {
+        font-size: 18px;
+    }
+
+    .products .rating {
+        font-size: 17px;
+    }
+
+    .products .add-to-cart {
+        font-size: 14px;
+        padding: 5px 3px;
+    }
+}
+
+@media screen and (max-width:389px) {
+
+    .product{
+        width: 100% !important;
+    }
+
+    .card{
+        width: 80%;
+    }
+
+    .card .card-body{
+        gap: 13px !important;
+    }
+
+    h1{
+        margin-bottom: 30px;
+    }
+
+    .products h2 {
+        font-size: 20px;
+    }
+
+    .products .price {
+        font-size: 18px;
+    }
+
+    .products .rating {
+        font-size: 17px;
+    }
+
+    .products .add-to-cart {
+        font-size: 15px;
+        padding: 7px 3px;
+    }
+}
+
+/* products responsive ends */
