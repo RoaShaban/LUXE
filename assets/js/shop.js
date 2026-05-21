@@ -111,7 +111,7 @@ const getProducts = async (category, sort_value) => {
 const displayProducts = async (sort_value = "default") => {
 
     const products = await getProducts(lastClicked, sort_value);
-    const result = products.map((product) => {
+    const result = products.map((product, index) => {
         return `<div class="product col-6 col-sm-6 col-md-4 col-xl-3">
                     <div class="card m-auto h-100">
                         <img src="${product.thumbnail}" class="card-img-top w-100 h-auto" alt="product image"/>
@@ -124,7 +124,7 @@ const displayProducts = async (sort_value = "default") => {
                                 </span>
                                 <span class="price">$${product.price}</span>
                             </div>
-                            <a href="#" class="btn btn-primary add-to-cart">Add To Cart</a>
+                            <a href="./product_details.html?id=${index + 1}" class="btn btn-primary product-details">Product Details</a>
                         </div>
                     </div>
                 </div>`
